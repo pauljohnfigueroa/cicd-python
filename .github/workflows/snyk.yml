@@ -1,5 +1,7 @@
 name: Python-3.8 using Snyk
 on: push
+    branch:
+        - main
 jobs:
     security:
         runs-on: ubuntu-latest
