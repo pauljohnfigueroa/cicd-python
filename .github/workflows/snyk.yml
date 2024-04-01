@@ -1,8 +1,5 @@
 name: Workflow for Python using Snyk
-on:
-    push:
-        branches:
-            - main
+on: push
 jobs:
     security:
         runs-on: ubuntu-latest
