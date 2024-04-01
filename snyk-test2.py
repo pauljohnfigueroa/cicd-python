@@ -1,1 +1,1 @@
-print("Test snyk 2")
+print("Test snyk two")
