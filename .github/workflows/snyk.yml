@@ -1,14 +1,11 @@
-name: Python-3.8 using Snyk
-on: 
-    push:
-        branches:
-            - main
+name: Workflow for Python using Snyk
+on: push
 jobs:
     security:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@master
             - name: Run Snyk to check for vulnerabilities
-              uses: snyk/actions/python-3.8@master
+              uses: snyk/actions/python@master
               env:
                   SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
