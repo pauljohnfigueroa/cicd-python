@@ -6,9 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        env:
-          AUTOPEP_TOKEN: ${{ secrets.AUTOPEP_TOKEN }}
         with:
+          lfs: true
+          token: ${{ secrets.AUTOPEP_TOKEN }}
           ref: ${{ github.head_ref }}
       - name: autopep8
         uses: peter-evans/autopep8@v2
