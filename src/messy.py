@@ -1,4 +1,6 @@
-str="hello"
-age=10
-def messy(x,y):
- return x    *    y
+str = "hello"
+age = 10
+
+
+def messy(x, y):
+    return x * y
