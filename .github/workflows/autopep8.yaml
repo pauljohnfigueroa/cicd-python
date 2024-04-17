@@ -1,9 +1,9 @@
 # This action works with pull requests and pushes
-name: AutoPep8
+name: Run AutoPep8
 
 on:
-  pull_request:
   push:
+  pull_request:
     branches:
     - main
 
