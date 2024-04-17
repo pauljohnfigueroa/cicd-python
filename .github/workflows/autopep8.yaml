@@ -1,21 +1,19 @@
-name: Run Autopep8
-on: push
+# This action works with pull requests and pushes
+name: AutoPep8
+
+on:
+  pull_request:
+  push:
+    branches:
+    - main
+
 jobs:
-  autopep8:
-    # Check if the PR is not from a fork
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: autopep8
-        uses: peter-evans/autopep8@v2
-        with:
-          args: --recursive --in-place --aggressive --aggressive .
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          commit-message: autopep8 action fixes
-          title: Fixes by autopep8 action
-          body: This is an auto-generated PR with fixes by autopep8.
-          labels: autopep8, automated pr
-          reviewers: peter-evans
-          branch: autopep8-patches
+    - uses: actions/checkout@vv
+      with:
+        # Make sure the actual branch is checked out when running on pull requests
+        ref: ${{ github.head_ref }}
+    - uses: creyD/action_autopep8@v3.1
