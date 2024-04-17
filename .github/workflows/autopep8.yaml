@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          personal_token: ${{ secrets.AUTOPEP_TOKEN }}
+          AUTOPEP_TOKEN: ${{ secrets.AUTOPEP_TOKEN }}
           ref: ${{ github.head_ref }}
       - name: autopep8
         uses: peter-evans/autopep8@v2
